@@ -142,3 +142,26 @@
 .animate-panorama-in {
   animation: panorama-in 0.6s ease-out forwards;
 }
+
+@keyframes load-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-load-in {
+  animation: load-in 1.4s ease-out forwards;
+}

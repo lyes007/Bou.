@@ -5,6 +5,7 @@ import { Analytics } from '@vercel/analytics/next'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import { PanoramaProvider } from '@/components/layout/PanoramaContext'
+import LoadingScreen from '@/components/layout/LoadingScreen'
 import './globals.css'
 
 const _geist = Geist({ subsets: ["latin"] });
@@ -27,6 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-sans antialiased bg-white text-black">
+        <LoadingScreen />
         <PanoramaProvider>
           <Navbar />
           {children}
