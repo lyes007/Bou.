@@ -15,8 +15,8 @@ export const metadata: Metadata = {
   title: 'Bou.',
   description: 'Tiramisu maison et café à Lille. Découvrez nos parfums classiques et créatifs, sur place ou à emporter.',
   icons: {
-    icon: '/icon-bou.png',
-    apple: '/icon-bou.png',
+    icon: '/Logo-no-bg.png',
+    apple: '/Logo-no-bg.png',
   },
 }
 
