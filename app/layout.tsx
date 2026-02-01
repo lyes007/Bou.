@@ -6,6 +6,7 @@ import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import { PanoramaProvider } from '@/components/layout/PanoramaContext'
 import LoadingScreen from '@/components/layout/LoadingScreen'
+// import ChatBot from '@/components/chat/ChatBot' // hidden until chat works
 import './globals.css'
 
 const _geist = Geist({ subsets: ["latin"] });
@@ -33,6 +34,7 @@ export default function RootLayout({
           <Navbar />
           {children}
           <Footer />
+          {/* <ChatBot /> */}
         </PanoramaProvider>
         <Analytics />
       </body>

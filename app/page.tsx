@@ -1,6 +1,7 @@
 import ProductPanorama from '@/components/layout/ProductPanorama'
 import HeroSection from '@/components/layout/HeroSection'
 import FeaturesSection from '@/components/layout/FeaturesSection'
+import { ImageGallery } from '@/components/ui/image-gallery'
 import CTASection from '@/components/layout/CTASection'
 
 export default function HomePage() {
@@ -13,6 +14,9 @@ export default function HomePage() {
 
       {/* Features Section */}
       <FeaturesSection />
+
+      {/* Shop image gallery */}
+      <ImageGallery />
 
       {/* CTA Section */}
       <CTASection />
