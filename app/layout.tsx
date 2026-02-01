@@ -6,6 +6,8 @@ import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import { PanoramaProvider } from '@/components/layout/PanoramaContext'
 import LoadingScreen from '@/components/layout/LoadingScreen'
+import SessionProvider from '@/components/providers/SessionProvider'
+import OfferPopup from '@/components/layout/OfferPopup'
 // import ChatBot from '@/components/chat/ChatBot' // hidden until chat works
 import './globals.css'
 
@@ -30,12 +32,15 @@ export default function RootLayout({
     <html lang="en">
       <body className="font-sans antialiased bg-white text-black">
         <LoadingScreen />
-        <PanoramaProvider>
-          <Navbar />
-          {children}
-          <Footer />
-          {/* <ChatBot /> */}
-        </PanoramaProvider>
+        <SessionProvider>
+          <PanoramaProvider>
+            <Navbar />
+            {children}
+            <Footer />
+            <OfferPopup />
+            {/* <ChatBot /> */}
+          </PanoramaProvider>
+        </SessionProvider>
         <Analytics />
       </body>
     </html>
