@@ -2,11 +2,10 @@ import { NextResponse } from 'next/server'
 import { GoogleGenAI } from '@google/genai'
 import { getShopSystemPrompt } from '@/lib/chat-context'
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY })
-
 export async function POST(req: Request) {
   try {
-    if (!process.env.GEMINI_API_KEY) {
+    const apiKey = process.env.GEMINI_API_KEY
+    if (!apiKey) {
       return NextResponse.json(
         { error: 'GEMINI_API_KEY non configurée. Ajoutez-la dans .env (voir .env.example).' },
         { status: 500 },
@@ -23,6 +22,7 @@ export async function POST(req: Request) {
       )
     }
 
+    const ai = new GoogleGenAI({ apiKey })
     const systemPrompt = getShopSystemPrompt()
     const firstUserIndex = messages.findIndex((m) => m.role === 'user')
     const toSend = firstUserIndex >= 0 ? messages.slice(firstUserIndex) : messages
